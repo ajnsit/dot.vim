@@ -1,0 +1,11 @@
+#!/bin/sh
+# fast-tags wrapper to generate tags automatically if there are none.
+
+if [ -f tags ];
+then
+    /home/aj/.cabal/bin/fast-tags $1
+else
+    echo Generating tags from scratch...
+    find . -name "*.hs" | xargs /home/aj/.cabal/bin/fast-tags
+fi
+
