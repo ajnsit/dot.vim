@@ -1,0 +1,7 @@
+My VIM configuration
+====================
+This is my vim configuration as it exists right now.
+
+It basically is geared towards haskell development but has some added support for other languages as well.
+
+The plugins are managed using Vundle. The vimrc file is split into multiple files in the rc directory.
