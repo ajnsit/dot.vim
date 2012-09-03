@@ -66,6 +66,9 @@ set listchars+=extends:>        " ditto
 " Keep cursor on the center of the buffer
 set scrolloff=999
 
+" Use System clipboard by default
+set clipboard=unnamedplus
+
 " Search options
 set wrapscan                    " (ws) allows search to wrap to top of document when the bottom has been hit
 set incsearch                   " (is) highlights what you are searching for as you type
