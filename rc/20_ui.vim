@@ -25,8 +25,8 @@ set lines=60
 set columns=120
 
 " UI options
-set guioptions+=TlrLb   " (go) Hide toolbar, scrollbar etc.
-set guioptions-=TlrLb   " (go) Hide toolbar, scrollbar etc.
+set guioptions+=TlrLbm  " (go) Hide toolbar, scrollbar etc.
+set guioptions-=TlrLbm  " (go) Hide toolbar, scrollbar etc.
 set cursorline          " Highlight current line
 set ruler               " show the cursor position all the time
 set laststatus=2        " Always show the statusline
