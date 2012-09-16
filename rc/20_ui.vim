@@ -11,7 +11,6 @@ colorscheme molokai
 " Make sure you are using 256 colors even in the terminal vim
 set t_Co=256
 
-
 " Intelligent highlighting of trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red           " Red background
 au ColorScheme * highlight ExtraWhitespace guibg=red      " Prevent themes from overriding this setting
@@ -34,9 +33,6 @@ set showcmd             " display incomplete commands
 set number              " show line numbers
 " TODO: Figure out why visual bell freezes Vim for a few seconds on this machine (Vaio)
 " set visualbell          " use a visual bell
-
-" Set the color of the current line
-hi CursorLine term=none cterm=none ctermbg=3
 
 " Make Vim consider the entire buffer up to the cursor to determine the highlighting
 " Gets rid of the syntax highlighting lag and bugs when browsing Haskell code, at the cost of performance
