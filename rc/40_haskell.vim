@@ -58,6 +58,6 @@ endfunction
 au BufNewFile,BufRead *.hs,*.hsc,*.cabal,*.lhs call HaskellPackageRoot()
 
 " Run Haskell Lint on file write
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+" autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 
