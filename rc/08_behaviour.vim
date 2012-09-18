@@ -110,4 +110,6 @@ map Q gq
 "  In other words, you can be anywhere in your source tree instead of just the root of it.
 set tags=./tags;/
 
+" Always use bash in interactive mode (so it reads my .bashrc file)
+set shell=/bin/bash\ -i
 
