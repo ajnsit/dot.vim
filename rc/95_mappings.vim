@@ -21,6 +21,9 @@ map <F2> mzggg?G`z      "(seems to be faster than mzggVGg?`z)
 map  <F3> a<C-R>=strftime("%c")<CR><Esc>
 imap <F3>  <C-R>=strftime("%c")<CR>
 
+" <F4> Open bufferlist
+map <silent> <F4> :call BufferList()<CR>
+
 " <F6> sorts a paragraph of numbers using the external 'sort' program
 map <F6> {V}k:!sort<CR>
 

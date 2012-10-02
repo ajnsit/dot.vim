@@ -29,11 +29,12 @@ Bundle 'SirVer/ultisnips'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-surround'
 Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'roblillack/vim-bufferlist'
 
 " Haskell stuff
 Bundle 'dag/vim2hs'
-Bundle 'ujihisa/neco-ghc'
 Bundle 'eagletmt/ghcmod-vim'
+Bundle 'bitc/vim-hdevtools'
 Bundle 'Shougo/vimproc'
 Bundle 'scrooloose/syntastic'
 Bundle 'Twinside/vim-haskellFold'
@@ -41,6 +42,7 @@ Bundle 'pbrisbin/html-template-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'Twinside/vim-hoogle'
+Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'
 
 " Vimscripts
 Bundle 'argtextobj'

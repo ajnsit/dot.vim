@@ -1,19 +1,5 @@
 " vim: set ff=unix ft=vim fenc=utf-8:
 
-" use ghc as the compiler for haskell files
-" This is only needed for haskellmode (we don't use it anymore)
-" au Bufenter *.hs compiler ghc
-
-" Enable Neocomplcache code completion
-let g:neocomplcache_enable_at_startup = 1
-
-" Better Haskell code completion using Neocomplcache, neco-ghc, and ghc-mod
-" Disable AutoComplPop.
-" let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-" let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-" let g:neocomplcache_enable_smart_case = 1
 " Path to haddock browser
 let g:haddock_browser = "/usr/bin/firefox"
 
@@ -24,33 +10,42 @@ let g:haddock_browser = "/usr/bin/firefox"
 au BufWritePost *.hs            silent !/home/aj/bin/init-tags %
 au BufWritePost *.hsc           silent !/home/aj/bin/init-tags %
 
-" Hoogle shortcuts
-au BufNewFile,BufRead *.hs map <buffer> <F1>   :Hoogle
-au BufNewFile,BufRead *.hs map <buffer> <C-F1> :HoogleClose<CR>
-au BufNewFile,BufRead *.hs map <buffer> <S-F1> :HoogleLine<CR>
+" Use NecoGhc autocompletion for haskell files
+" This should really not be needed as necoghc integrates with neocomplcache
+" However, I disable autocompletion by default for performance reasons
+" and somehow, necoghc#omnifunc is not called for manual completion
+au BufNewFile,BufRead *.hs setlocal omnifunc=necoghc#omnifunc
 
 " Function to switch to the enclosing haskell project's root folder
 " The root folder is defined by the presence of either a .cabal file
 " OR by the presence of a Setup.[l]hs file.
 function! HaskellPackageRoot()
-  let s:origdir = expand('%:h')
-  let s:filedir = s:origdir
-  let s:found = 0
+  let l:filedir = expand('%:h')
+  let l:newdir = l:filedir
+  let l:found = 0
   while 1
-    if s:filedir == '/' || s:filedir == '.'
+    " Stop if we reach the filesystem root
+    if l:newdir == '/'
       break
     endif
-    if empty(glob(s:filedir . '/*.cabal')) && !filereadable(s:filedir . '/Setup.hs')
-      let s:filedir = fnamemodify(s:filedir, ':h')
+    " Do NOTHING if the current working dir is an ancestor of the file
+    if l:newdir == '.'
+      return
+    endif
+    " Else check for the presence of a marker file
+    if empty(glob(l:newdir . '/*.cabal')) && !filereadable(l:newdir . '/Setup.hs') && !filereadable(l:newdir . '/Setup.lhs')
+      let l:newdir = fnamemodify(l:newdir, ':h')
     else
-      let s:found = 1
+      let l:found = 1
       break
     endif
   endwhile
-  if s:found
-    exec 'cd' fnameescape(s:filedir)
+  if l:found
+    " If a marker file is found, then switch to that dir
+    exec 'cd' fnameescape(l:newdir)
   else
-    exec 'cd' fnameescape(s:origdir)
+    " If no marker files found then switch to the dir of the file
+    exec 'cd' fnameescape(l:filedir)
   endif
 endfunction
 
@@ -59,5 +54,8 @@ au BufNewFile,BufRead *.hs,*.hsc,*.cabal,*.lhs call HaskellPackageRoot()
 
 " Run Haskell Lint on file write
 " autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
+" Treat ELM Files as Haskell Files
+au! BufNewFile,BufRead *.elm set filetype=haskell
 
 
