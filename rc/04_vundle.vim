@@ -51,6 +51,7 @@ Bundle 'mru.vim'
 Bundle 'jsbeautify'
 Bundle 'hexman.vim'
 Bundle 'ack.vim'
+Bundle 'cscope.vim'
 
 " These plugins come with VIM but are not enabled by default
 " However manual installation sucks! So I install them from vim-scripts
