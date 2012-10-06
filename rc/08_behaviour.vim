@@ -65,6 +65,8 @@ set listchars+=extends:>        " ditto
 
 " Keep cursor on the center of the buffer
 set scrolloff=999
+" <,zz> toggles centering
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 " Use System clipboard by default
 set clipboard=unnamedplus
