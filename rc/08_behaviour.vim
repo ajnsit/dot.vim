@@ -28,7 +28,7 @@ set directory=~/.vimswaps,/tmp
 set backup
 
 " Ignore the following files (tab completion, directory browsing etc.)
-set wildignore=*.swp,*.bak,*.pyc,*.pyo,*.exe,*.pdb,*.obj,*.o,*.hi,*~
+set wildignore=*.swp,*.bak,*.pyc,*.pyo,*.exe,*.pdb,*.obj,*.o,*.hi,*~,*.tpc,*.gch
 
 " Show a mini explorer window on tab completion in minibuffer
 set wildmenu
