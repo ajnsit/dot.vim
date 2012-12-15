@@ -18,12 +18,12 @@ endfunction
 
 " Removes the ^M character from the end of every line
 function! RemoveM()
-    :%s/^M$//g
+    :%s/$//g
 endfunction
 
 " Replaces the ^M character with a carraige return native to the system
 function! ReplaceM()
-    :%s/^M/\r/g
+    :%s//\r/g
 endfunction
 
 " Removes superfluous white space from the end of a line
