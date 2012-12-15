@@ -30,6 +30,9 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-surround'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'roblillack/vim-bufferlist'
+Bundle 'rainux/vim-vala'
+Bundle 'benmills/vimux'
+Bundle 'groenewege/vim-less'
 
 " Haskell stuff
 Bundle 'dag/vim2hs'
@@ -43,6 +46,9 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'Twinside/vim-hoogle'
 Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'
+
+" Other languages
+Bundle 'kchmck/vim-coffee-script'
 
 " Vimscripts
 Bundle 'argtextobj'
