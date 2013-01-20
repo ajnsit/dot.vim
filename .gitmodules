@@ -1,0 +1,8 @@
+[submodule "vundle"]
+path = bundle/vundle
+url = https://github.com/gmarik/vundle.git
+
+[submodule "ubuntu-mono-powerline"]
+path = vendor/ubuntu-mono-powerline
+url = https://github.com/scotu/ubuntu-mono-powerline.git
+
