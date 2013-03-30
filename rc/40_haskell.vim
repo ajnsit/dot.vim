@@ -7,8 +7,10 @@ let g:haddock_browser = "/usr/bin/firefox"
 " (using fast-tags - http://hackage.haskell.org/package/fast-tags)
 " Fast tags generates tags incrementally, so the compilation should be
 " unnoticable
-au BufWritePost *.hs            silent !/home/aj/bin/init-tags %
-au BufWritePost *.hsc           silent !/home/aj/bin/init-tags %
+if executable('/home/aj/bin/init-tags')
+  au BufWritePost *.hs            silent !/home/aj/bin/init-tags %
+  au BufWritePost *.hsc           silent !/home/aj/bin/init-tags %
+endif
 
 " Use NecoGhc autocompletion for haskell files
 " This should really not be needed as necoghc integrates with neocomplcache
