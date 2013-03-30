@@ -9,7 +9,8 @@ let g:molokai_original = 1
 colorscheme molokai
 
 " Make sure you are using 256 colors even in the terminal vim
-set t_Co=256
+" EDIT: Commented out in favor of TERM=xterm-256color in .bashrc
+" set t_Co=256
 
 " Intelligent highlighting of trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red           " Red background
