@@ -45,13 +45,13 @@ Bundle 'pbrisbin/html-template-syntax'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'Twinside/vim-hoogle'
-Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'
+" Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'
 
 " Other languages
 Bundle 'kchmck/vim-coffee-script'
 
 " Vimscripts
-Bundle 'argtextobj'
+Bundle 'argtextobj.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'mru.vim'
 Bundle 'jsbeautify'
