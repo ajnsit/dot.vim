@@ -6,3 +6,6 @@ url = https://github.com/gmarik/vundle.git
 path = vendor/ubuntu-mono-powerline
 url = https://github.com/scotu/ubuntu-mono-powerline.git
 
+[submodule "vendor/ttf-dejavu-powerline"]
+	path = vendor/ttf-dejavu-powerline
+	url = git://gist.github.com/1630581.git
