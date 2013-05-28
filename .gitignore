@@ -18,7 +18,8 @@ dist
 *.o
 client_session_key.aes
 tmp
-undo
+undo/*
+!undo/DO_NOT_REMOVE
 bundle/*
 !bundle/vundle
 
