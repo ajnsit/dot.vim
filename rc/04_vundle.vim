@@ -33,6 +33,7 @@ Bundle 'roblillack/vim-bufferlist'
 Bundle 'rainux/vim-vala'
 Bundle 'benmills/vimux'
 Bundle 'groenewege/vim-less'
+Bundle 'tomtom/tinykeymap_vim'
 
 " Haskell stuff
 Bundle 'dag/vim2hs'
