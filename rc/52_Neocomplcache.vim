@@ -22,12 +22,3 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
 
-" Other Key-mappings.
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-" <C-y>: Accept completion (usually the same as <CR>)
-inoremap <expr><C-y>  neocomplcache#close_popup()
-" <C-y>: cancel completion
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
