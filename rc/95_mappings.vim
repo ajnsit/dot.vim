@@ -67,9 +67,6 @@ nnoremap <CR> :noh<CR><CR>
 nmap . .`[
 map <a-.> `[<Down>.
 
-" Quickly invoke Ack
-map <leader>f :Ack<Space>
-
 " Modify (:cdd) to autochange current directory to the current file path
 cnoreabbrev cdd cd %:p:h<CR>:pwd<CR>
 
