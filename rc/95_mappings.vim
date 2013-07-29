@@ -4,18 +4,21 @@
 " Ctrl [h/l] simply switches to left/right split
 nmap <silent> <C-H> :wincmd h<CR>
 nmap <silent> <C-L> :wincmd l<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-k> :wincmd k<CR>
 
 " However, moving between horizontally split windows is special
 " We make this much faster and intuitive
 " Ctrl J now expands the below pane and switches to it
 " Ctrl K does the same for above window
-"nmap <silent> <c-j> :wincmd j<CR>
-"nmap <silent> <c-k> :wincmd k<CR>
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
+" map <C-H> <C-W>h<C-W>|
+" map <C-L> <C-W>l<C-W>|
+" map <C-J> <C-W>j<C-W>_
+" map <C-K> <C-W>k<C-W>_
 
 " <F2> applies a rot13 dmca-grade encryption scheme to your file
-map <F2> mzggg?G`z      "(seems to be faster than mzggVGg?`z)
+" Clashes with hdevtools
+" map <F2> mzggg?G`z      "(seems to be faster than mzggVGg?`z)
 
 " <F3> appends the current date and time after the cursor
 map  <F3> a<C-R>=strftime("%c")<CR><Esc>
@@ -39,10 +42,7 @@ nmap <F8> :TagbarToggle<CR>
 map  <F9> :set wrap!<CR>
 imap <F9> <ESC>:set wrap!<CR>a
 
-" Finally gathered up the courage to DISABLE arrow keys!!
-" Need to teach myself to use hjkl for movement.
-" Hopefully this will also force me to use the more efficient movement commands
-"		instead of always relying on character by character movement.
+" DISABLE arrow keys!!
 "	Map Right/Left keys to navigate buffers
 "	Leave the Up/Down keys as is as they are useful in buffers
 map <right> :bn<cr>
