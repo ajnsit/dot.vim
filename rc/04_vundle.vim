@@ -1,79 +1,91 @@
 " vim: set ff=unix ft=vim fenc=utf-8:
 
 " Disable filetype detection
-" Required before loading Vundle!
-filetype off
+" Automatically called by neobundle#rc
+" filetype off
 
-" Set runtimepath and initialise vundle
-let &rtp=&rtp.','.$PL_BUNDLE_PATH.'/vundle/'
-call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" required: let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" It's recommended to install vimproc
+" After install, run: make -f make_unix.mak
+NeoBundle 'Shougo/vimproc'
 
 " My Bundles
 
-" Github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kien/ctrlp.vim'
-Bundle 'rosenfeld/conque-term'
-Bundle 'mbadran/headlights'
-Bundle 'sjbach/lusty'
-Bundle 'ujihisa/neco-ghc'
-Bundle 'Shougo/neocomplcache'
-Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
-Bundle 'SirVer/ultisnips'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-surround'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'roblillack/vim-bufferlist'
-Bundle 'rainux/vim-vala'
-Bundle 'benmills/vimux'
-Bundle 'groenewege/vim-less'
-Bundle 'tomtom/tinykeymap_vim'
+" UI
+NeoBundle 'Lokaltog/vim-powerline'  " Status bar
+NeoBundle 'mbadran/headlights'      " Bundle management menu
 
-" Haskell stuff
-Bundle 'dag/vim2hs'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'bitc/vim-hdevtools'
-Bundle 'Shougo/vimproc'
-Bundle 'scrooloose/syntastic'
-Bundle 'Twinside/vim-haskellFold'
-Bundle 'pbrisbin/html-template-syntax'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kana/vim-textobj-indent'
-Bundle 'Twinside/vim-hoogle'
-" Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'
+" Source control
+NeoBundle 'tpope/vim-fugitive'      " Git integration
+
+" Motion
+NeoBundle 'matchit.zip'             " improved '%' matches
+NeoBundle 'argtextobj.vim'          " Text objects for arguments ('a')
+NeoBundle 'kana/vim-textobj-indent' " Text objects by indentation ('i')
+NeoBundle 'kana/vim-textobj-user'   " Define your own text objs
+NeoBundle 'Lokaltog/vim-easymotion' " <leader><leader>w or <leader><leader>b etc.
+NeoBundle 'godlygeek/tabular'       " Text alignment
+NeoBundle 'tpope/vim-surround'      " Manipulate 'surrounding' characters, ds<char>, cs<char><char>, ys<obj><char>
+
+" External commands
+NeoBundle 'rosenfeld/conque-term'     " Terminal integration
+
+" Explorers
+NeoBundle 'mru.vim'                   " Most recently used file list. E.g. :MRU aliased to :rf
+NeoBundle 'scrooloose/nerdtree'       " File explorer. E.g. <leader>d and <leader>r
+NeoBundle 'kien/ctrlp.vim'            " Fuzzy file finder. E.g. <Ctrl>p
+NeoBundle 'majutsushi/tagbar'         " Tags explorer. E.g. <F8>
+NeoBundle 'sjbach/lusty'              " Filesystem and Buffer explorer. E.g. <leader>lf <leader>lb
+NeoBundle 'roblillack/vim-bufferlist' " Display buffers, <F4>
+NeoBundle 'Shougo/vimfiler.vim'       " A File manager
+NeoBundle 'bufexplorer.zip'           " Buffer explorer
+NeoBundle 'Shougo/unite.vim'          " Unite output from various sources in one buffer
+
+" Tools
+NeoBundle 'hexman.vim'                " Hex editing
+
+" Shortcuts
+NeoBundle 'SirVer/ultisnips'      " Snippets, <Ctrl><Tab>
+NeoBundle 'Shougo/neocomplcache'  " Auto completion <Ctrl><Space>
+NeoBundle 'tomtom/tinykeymap_vim' " Temporary modes for window/tabs/buffers/diffs etc.
+
+" Syntax and type checking
+NeoBundle 'scrooloose/syntastic'  " Quick type checking
+
+" Haskell
+NeoBundle 'dag/vim2hs'               " Better syntax highlighting, hlint, ultisnips, tabularize support
+NeoBundle 'ujihisa/neco-ghc'         " Neocomplcache support for Haskell
+NeoBundle 'eagletmt/ghcmod-vim'      " GHCMod integration
+NeoBundle 'bitc/vim-hdevtools'       " hdevtools integration
+NeoBundle 'Twinside/vim-haskellFold' " Better haskell folding (better than vim2hs)
+NeoBundle 'bitc/lushtags'            " Automatic tags for haskell files (tagbar compatible)
+NeoBundle 'adinapoli/cumino'         " Vim -> Ghci communication through tmux
+" Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'      " BROKEN
 
 " Other languages
-Bundle 'kchmck/vim-coffee-script'
-
-" Vimscripts
-Bundle 'argtextobj.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'mru.vim'
-Bundle 'jsbeautify'
-Bundle 'hexman.vim'
-Bundle 'ack.vim'
-Bundle 'cscope.vim'
-
-" These plugins come with VIM but are not enabled by default
-" However manual installation sucks! So I install them from vim-scripts
-Bundle 'matchit.zip'
+NeoBundle 'rainux/vim-vala'          " Vala support
+NeoBundle 'groenewege/vim-less'      " LessCss support
+NeoBundle 'kchmck/vim-coffee-script' " Coffeescript support
+NeoBundle 'cscope.vim'               " C File browsing
+NeoBundle 'jsbeautify'               " JS Beautifier
 
 " required: Re-enable file type detection
 filetype plugin indent on
 
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleSearch(!) foo - search(or refresh cache first) for foo
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" see :h neobundle for more details or wiki for FAQ
 
