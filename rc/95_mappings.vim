@@ -74,4 +74,9 @@ cnoreabbrev cdd cd %:p:h<CR>:pwd<CR>
 cnoreabbrev df diffthis
 cnoreabbrev de diffoff
 
+" Line numbers configuration (numbers plugin)
+" Toggle between Relative and Absolute numbering
+nnoremap <leader>lt :NumbersToggle<CR>
+" Show/Hide line numbers in a buffer
+nnoremap <leader>ln :NumbersOnOff<CR>
 
