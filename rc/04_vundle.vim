@@ -59,7 +59,9 @@ NeoBundle 'Shougo/neocomplcache'  " Auto completion <Ctrl><Space>
 NeoBundle 'tomtom/tinykeymap_vim' " Temporary modes for window/tabs/buffers/diffs etc.
 
 " Syntax and type checking
-NeoBundle 'scrooloose/syntastic'  " Quick type checking
+NeoBundle 'scrooloose/syntastic'     " Quick type checking
+NeoBundle 'ajnsit/JavaScript-syntax' " JS better syntax highlighting and folding
+NeoBundle 'marijnh/tern_for_vim'     " Tern code analysis for JS
 
 " Haskell
 NeoBundle 'dag/vim2hs'               " Better syntax highlighting, hlint, ultisnips, tabularize support
