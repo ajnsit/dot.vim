@@ -35,6 +35,7 @@ NeoBundle 'kana/vim-textobj-user'   " Define your own text objs
 NeoBundle 'Lokaltog/vim-easymotion' " <leader><leader>w or <leader><leader>b etc.
 NeoBundle 'godlygeek/tabular'       " Text alignment
 NeoBundle 'tpope/vim-surround'      " Manipulate 'surrounding' characters, ds<char>, cs<char><char>, ys<obj><char>
+NeoBundle 'bkad/CamelCaseMotion'    " Move within camel-cased and underscored words, <leader>w <leader>b <leader>e
 
 " External commands
 NeoBundle 'rosenfeld/conque-term'     " Terminal integration
