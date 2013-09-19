@@ -21,8 +21,9 @@ NeoBundle 'Shougo/vimproc'
 
 " UI
 NeoBundle 'Lokaltog/vim-powerline'  " Status bar
-NeoBundle 'mbadran/headlights'      " Bundle management menu
-NeoBundle 'myusuf3/numbers.vim'     " Switch between relative and absolute line numbers based on mode
+" Disabled headlights as I disable the menubar altogether
+" NeoBundle 'mbadran/headlights'    " Bundle management menu
+NeoBundle 'ajnsit/vim-autornu'      " Switch between relative and absolute line numbers based on mode
 
 " Source control
 NeoBundle 'tpope/vim-fugitive'      " Git integration
@@ -55,14 +56,16 @@ NeoBundle 'Shougo/unite.vim'          " Unite output from various sources in one
 NeoBundle 'hexman.vim'                " Hex editing
 
 " Shortcuts
-NeoBundle 'SirVer/ultisnips'      " Snippets, <Ctrl><Tab>
-NeoBundle 'Shougo/neocomplcache'  " Auto completion <Ctrl><Space>
-NeoBundle 'tomtom/tinykeymap_vim' " Temporary modes for window/tabs/buffers/diffs etc.
+NeoBundle 'SirVer/ultisnips'       " Snippets, <Ctrl><Tab>
+NeoBundle 'Shougo/neocomplcache'   " Auto completion <Ctrl><Space>
+NeoBundle 'tomtom/tinykeymap_vim'  " Temporary modes for window/tabs/buffers/diffs etc.
+" NeoBundle 'Valloric/YouCompleteMe' " Auto completion <Ctrl><Space>
 
 " Syntax and type checking
 NeoBundle 'scrooloose/syntastic'     " Quick type checking
 NeoBundle 'ajnsit/JavaScript-syntax' " JS better syntax highlighting and folding
-NeoBundle 'marijnh/tern_for_vim'     " Tern code analysis for JS
+" Tern requires python support
+" NeoBundle 'marijnh/tern_for_vim'     " Tern code analysis for JS
 
 " Haskell
 NeoBundle 'dag/vim2hs'               " Better syntax highlighting, hlint, ultisnips, tabularize support

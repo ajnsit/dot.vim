@@ -3,8 +3,9 @@
 " Color scheme and font
 " Either use Ubuntu Mono or DejaVu Sans Mono
 " Ubuntu Mono is much smaller so use a larger font size
-" set guifont=Ubuntu\ Mono\ 13
-set guifont=DejaVu\ Sans\ Mono\ 11
+set guifont=Ubuntu\ Mono\ 13
+" set guifont=DejaVu\ Sans\ Mono\ 11
+" set guifont=Anonymous\ Pro\ 13
 " Jellybeans and Molokai are the two best schemes
 " For Molokai, use the original (gray-brown) background
 let g:molokai_original = 1
