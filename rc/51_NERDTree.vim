@@ -20,12 +20,13 @@ let NERDTreeDirArrows=1
 " NERDTree ignores all the wildignore'd files
 let NERDTreeIgnore = []
 for suffix in split(&wildignore, ',')
+  " HACKY! Breaks if we use fancy wildignores
   " Convert wildcards to regexes
   " '*.foo' -> '.*\.foo$'
   let NERDTreeIgnore += [ '.' . escape(suffix, '.~') . '$' ]
 endfor
 " Add any other files you need to ignore here
-let NERDTreeIgnore += ['tags']
+let NERDTreeIgnore += ['tags', 'node_modules', 'bower_components', '.tmp']
 
 
 
