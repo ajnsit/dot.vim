@@ -73,7 +73,7 @@ NeoBundle 'tomtom/tinykeymap_vim'  " Temporary modes for window/tabs/buffers/dif
 NeoBundle 'scrooloose/syntastic'     " Quick type checking
 NeoBundle 'ajnsit/JavaScript-syntax' " JS better syntax highlighting and folding
 " Tern requires python support
-" NeoBundle 'marijnh/tern_for_vim'     " Tern code analysis for JS
+NeoBundle 'marijnh/tern_for_vim'     " Tern code analysis for JS
 
 " Haskell
 NeoBundle 'dag/vim2hs'               " Better syntax highlighting, hlint, ultisnips, tabularize support
