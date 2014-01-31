@@ -6,7 +6,7 @@
 " CTRLP config
 
 " Start searching from haskell roots
-let g:ctrlp_root_markers = ['*.cabal']
+let g:ctrlp_root_markers = ['*.cabal', 'Gruntfile.js', 'package.json']
 
 " Custom ignore directories
 let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn|tmp)|node_modules|bower_components)$'
