@@ -30,7 +30,7 @@ NeoBundle 'Shougo/vimproc', {
 " NeoBundle 'Lokaltog/vim-powerline'  " Status bar
 NeoBundle 'bling/vim-airline'  " Status bar
 " Disabled headlights as I disable the menubar altogether
-" NeoBundle 'mbadran/headlights'    " Bundle management menu
+NeoBundle 'mbadran/headlights'      " Bundle management menu
 NeoBundle 'myusuf3/numbers.vim'     " Switch between relative and absolute line numbers based on mode
 
 " Source control
