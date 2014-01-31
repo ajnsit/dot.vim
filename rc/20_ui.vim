@@ -4,13 +4,16 @@
 " Either use Ubuntu Mono or DejaVu Sans Mono
 " Ubuntu Mono is much smaller so use a larger font size
 set guifont=Ubuntu\ Mono\ 13
+" Unicode symbols look better in SourceCodePro, however the lowercase 'i' is
+"  straight which sucks (for e.g. see how broken 'Utility' looks)
+" set guifont=SourceCodePro\ 11
 " set guifont=DejaVu\ Sans\ Mono\ 11
 " set guifont=Anonymous\ Pro\ 13
 " Jellybeans and Molokai are the two best schemes
 " For Molokai, use the original (gray-brown) background
 let g:molokai_original = 1
-" colorscheme jellybeans
 colorscheme molokai
+" colorscheme jellybeans
 
 " Make sure you are using 256 colors even in the terminal vim
 " EDIT: Commented out in favor of TERM=xterm-256color in .bashrc
