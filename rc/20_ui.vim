@@ -40,7 +40,7 @@ set laststatus=2        " Always show the statusline
 set showcmd             " display incomplete commands
 set number              " show line numbers
 " TODO: Figure out why visual bell freezes Vim for a few seconds on this machine (Vaio)
-" set visualbell          " use a visual bell
+set visualbell          " use a visual bell
 
 " Make Vim consider the entire buffer up to the cursor to determine the highlighting
 " Gets rid of the syntax highlighting lag and bugs when browsing Haskell code, at the cost of performance
