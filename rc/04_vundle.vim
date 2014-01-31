@@ -77,6 +77,7 @@ NeoBundle 'ajnsit/JavaScript-syntax' " JS better syntax highlighting and folding
 
 " Haskell
 NeoBundle 'dag/vim2hs'               " Better syntax highlighting, hlint, ultisnips, tabularize support
+NeoBundle 'Twinside/vim-haskellConceal' " Unicode haskell
 NeoBundle 'ujihisa/neco-ghc'         " Neocomplcache support for Haskell
 NeoBundle 'eagletmt/ghcmod-vim'      " GHCMod integration
 NeoBundle 'bitc/vim-hdevtools'       " hdevtools integration
