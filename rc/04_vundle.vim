@@ -31,7 +31,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'bling/vim-airline'  " Status bar
 " Disabled headlights as I disable the menubar altogether
 " NeoBundle 'mbadran/headlights'    " Bundle management menu
-NeoBundle 'ajnsit/vim-autornu'      " Switch between relative and absolute line numbers based on mode
+NeoBundle 'myusuf3/numbers.vim'     " Switch between relative and absolute line numbers based on mode
 
 " Source control
 NeoBundle 'tpope/vim-fugitive'      " Git integration

@@ -74,9 +74,9 @@ cnoreabbrev cdd cd %:p:h<CR>:pwd<CR>
 cnoreabbrev df diffthis
 cnoreabbrev de diffoff
 
-" Line numbers configuration (Autornu-vim plugin)
+" Line numbers configuration (numbers.vim)
 " Toggle between Relative and Absolute numbering
-nnoremap <leader>lt :AutornuToggle<CR>
+nnoremap <leader>lt :NumbersToggle<CR>
 " Show/Hide line numbers in a buffer
-nnoremap <leader>ln :AutornuOnOff<CR>
+nnoremap <leader>ln :NumbersOnOff<CR>
 
