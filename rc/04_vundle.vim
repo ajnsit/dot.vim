@@ -93,6 +93,9 @@ NeoBundle 'kchmck/vim-coffee-script' " Coffeescript support
 NeoBundle 'cscope.vim'               " C File browsing
 NeoBundle 'jsbeautify'               " JS Beautifier
 
+" Zenroom for vim
+NeoBundle 'mikewest/vimroom'
+
 " required: Re-enable file type detection
 filetype plugin indent on
 
