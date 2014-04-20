@@ -35,6 +35,7 @@ NeoBundle 'myusuf3/numbers.vim'     " Switch between relative and absolute line 
 
 " Source control
 NeoBundle 'tpope/vim-fugitive'      " Git integration
+NeoBundle 'airblade/vim-gitgutter'  " Show git diff markers in the gutter
 
 " Motion
 NeoBundle 'matchit.zip'             " improved '%' matches
