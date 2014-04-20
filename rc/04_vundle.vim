@@ -93,6 +93,7 @@ NeoBundle 'groenewege/vim-less'      " LessCss support
 NeoBundle 'kchmck/vim-coffee-script' " Coffeescript support
 NeoBundle 'cscope.vim'               " C File browsing
 NeoBundle 'jsbeautify'               " JS Beautifier
+NeoBundle 'jdonaldson/vaxe'          " Haxe support
 
 " Zenroom for vim
 NeoBundle 'mikewest/vimroom'
