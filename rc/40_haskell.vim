@@ -54,8 +54,7 @@ endfunction
 " Automatically switch to the root dir on opening a haskell file
 au BufNewFile,BufRead *.hs,*.hsc,*.cabal,*.lhs call HaskellPackageRoot()
 
-" Disable vim2hs unicode chars in favor of vim-haskellConceal plugin
-"  especially because vim2hs unicode chars get a white background for some reason
+" Disable vim2hs unicode chars which seem to get a white background
 let g:haskell_conceal = 0
 
 " Run Haskell Lint on file write
