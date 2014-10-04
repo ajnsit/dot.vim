@@ -16,3 +16,7 @@ au BufNewFile,BufRead *.coffee compiler coffee
 " Automatically recompile a coffee file when it's written
 au BufWritePost *.coffee silent CoffeeMake!
 
+
+"" RAML (http://raml.org/) Files are YAML Files
+au BufNewFile,BufRead *.raml set syntax=yaml
+
