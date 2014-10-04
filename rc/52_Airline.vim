@@ -4,6 +4,9 @@
 
 " Enable/disable enhanced tabline
 let g:airline#extensions#tabline#enabled = 1
+" TODO: Can't get buffer separators to work. Figure out why
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Use vim-powerline symbols
 let g:airline_left_sep = '⮀'
