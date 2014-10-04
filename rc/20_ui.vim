@@ -28,6 +28,7 @@ au InsertLeave * match     ExtraWhiteSpace /\s\+$/        " Highlight again on e
 
 
 " Set a slightly larger window size on startup
+" Commented this as it's annoying with vim in the console
 " set lines=60
 " set columns=120
 
