@@ -15,6 +15,9 @@ au BufNewFile,BufRead *.hs setlocal omnifunc=necoghc#omnifunc
 " Automatically switch to the root dir on opening a haskell file
 au BufNewFile,BufRead *.hs,*.hsc,*.cabal,*.lhs call HaskellPackageRoot()
 
+" Treat ELM Files as Haskell Files
+au! BufNewFile,BufRead *.elm set filetype=haskell
+
 " Automatically generate tags for haskell files
 " (using fast-tags - http://hackage.haskell.org/package/fast-tags)
 " Fast tags generates tags incrementally, so the compilation should be
@@ -79,8 +82,6 @@ let g:haskell_conceal = 0
 " Prefer hdevtools for typechecking over ghcmod but use ghc mod for other features
 let g:syntastic_haskell_checkers = ['hdevtools','hlint']
 
-" Treat ELM Files as Haskell Files
-au! BufNewFile,BufRead *.elm set filetype=haskell
 
 " Shortcuts for hdevtools plugin
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
