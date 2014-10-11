@@ -4,13 +4,7 @@
 let g:haddock_browser = "/usr/bin/firefox"
 
 " Automatically generate tags for haskell files
-" (using fast-tags - http://hackage.haskell.org/package/fast-tags)
-" Fast tags generates tags incrementally, so the compilation should be
-" unnoticable
-if executable('/home/aj/bin/init-tags')
-  au BufWritePost *.hs            silent !/home/aj/bin/init-tags %
-  au BufWritePost *.hsc           silent !/home/aj/bin/init-tags %
-endif
+au BufWritePost *.hs,*.hsc,*.elm  call GenHaskTags()
 
 " Use NecoGhc autocompletion for haskell files
 " This should really not be needed as necoghc integrates with neocomplcache
@@ -18,10 +12,27 @@ endif
 " and somehow, necoghc#omnifunc is not called for manual completion
 au BufNewFile,BufRead *.hs setlocal omnifunc=necoghc#omnifunc
 
-" Function to switch to the enclosing haskell project's root folder
+" Automatically switch to the root dir on opening a haskell file
+au BufNewFile,BufRead *.hs,*.hsc,*.cabal,*.lhs call HaskellPackageRoot()
+
+" Automatically generate tags for haskell files
+" (using fast-tags - http://hackage.haskell.org/package/fast-tags)
+" Fast tags generates tags incrementally, so the compilation should be
+" unnoticable
+function GenHaskTags()
+  if executable('fast-tags')
+    let l:prevroot = getcwd()
+    let l:root = FindHaskellRoot()
+    exec 'cd' l:root
+    silent !fast-tags `find . -name '*.hs' '*.elm'`
+    exec 'cd' l:prevroot
+  endif
+endfunction
+
+" Function to find the enclosing haskell project's root folder
 " The root folder is defined by the presence of either a .cabal file
 " OR by the presence of a Setup.[l]hs file.
-function! HaskellPackageRoot()
+function! FindHaskellRoot()
   let l:filedir = expand('%:h')
   let l:newdir = l:filedir
   let l:found = 0
@@ -30,9 +41,10 @@ function! HaskellPackageRoot()
     if l:newdir == '/'
       break
     endif
-    " Do NOTHING if the current working dir is an ancestor of the file
+    " Do nothing if the current working dir is an ancestor of the file
     if l:newdir == '.'
-      return
+      let l:found = 1
+      break
     endif
     " Else check for the presence of a marker file
     if empty(glob(l:newdir . '/*.cabal')) && !filereadable(l:newdir . '/Setup.hs') && !filereadable(l:newdir . '/Setup.lhs')
@@ -43,16 +55,21 @@ function! HaskellPackageRoot()
     endif
   endwhile
   if l:found
-    " If a marker file is found, then switch to that dir
-    exec 'cd' fnameescape(l:newdir)
+    " If a marker file is found
+    return fnameescape(l:newdir)
   else
-    " If no marker files found then switch to the dir of the file
-    exec 'cd' fnameescape(l:filedir)
+    " If no marker files found, then assume the file's dir is the root
+    return fnameescape(l:filedir)
   endif
 endfunction
 
-" Automatically switch to the root dir on opening a haskell file
-au BufNewFile,BufRead *.hs,*.hsc,*.cabal,*.lhs call HaskellPackageRoot()
+" Function to switch to the enclosing haskell project's root folder
+" The root folder is defined by the presence of either a .cabal file
+" OR by the presence of a Setup.[l]hs file.
+function! HaskellPackageRoot()
+  let l:root = FindHaskellRoot()
+  exec 'cd' l:root
+endfunction
 
 " Disable vim2hs unicode chars which seem to get a white background
 let g:haskell_conceal = 0
