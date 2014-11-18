@@ -90,8 +90,8 @@ set fileformats=unix,dos
 " Autosave files when focus is lost
 autocmd FocusLost * silent! wa
 
-" Added cabal bin dir to vim path
-let $PATH = $PATH . ':' . expand("~/.cabal/bin")
+" Added cabal, ghc, alex, and happy bin dirs to vim path
+let $PATH = $PATH . ':' . expand("~/.cabal/bin") . ':' . expand ("/opt/ghc/7.8.3/bin") . ':' . expand ("/opt/alex/3.1.3/bin") . ':' . expand ("/opt/happy/1.19.4/bin")
 
 " before writing to any file, this function call will remove any extra white space at the end of a line
 " autocmd BufWritePre,FileWritePre * :%s/\s\+$//e
