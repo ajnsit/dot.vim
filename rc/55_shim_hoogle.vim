@@ -14,7 +14,7 @@ autocmd FileType haskell nmap <C-c><C-r> :GhciReload<CR>
 
 " Unite
 let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>f :Unite -no-split -buffer-name=files   -start-insert file<cr>
 nnoremap <leader>t :Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
 nnoremap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
