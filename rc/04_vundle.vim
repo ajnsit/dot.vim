@@ -80,7 +80,8 @@ NeoBundle 'digitaltoad/vim-jade'    " Jade language support
 " NeoBundle 'adinapoli/cumino'         " Vim -> Ghci communication through tmux
 " Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'      " BROKEN
 
-
+" Required
+call neobundle#end()
 
 " required: Re-enable file type detection
 filetype plugin indent on
