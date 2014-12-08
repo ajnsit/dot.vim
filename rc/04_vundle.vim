@@ -6,11 +6,13 @@
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+  " Required
+  call neobundle#begin(expand('~/.vim/bundle/'))
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
-
 " Let NeoBundle manage NeoBundle
+" Required
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " It's recommended to install vimproc
@@ -100,6 +102,10 @@ NeoBundle 'mikewest/vimroom'
 
 " required: Re-enable file type detection
 filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 "
 " Brief help
