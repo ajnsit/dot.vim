@@ -80,6 +80,8 @@ NeoBundle 'digitaltoad/vim-jade'    " Jade language support
 " NeoBundle 'adinapoli/cumino'         " Vim -> Ghci communication through tmux
 " Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'      " BROKEN
 
+NeoBundle 'pbrisbin/vim-syntax-shakespeare'
+
 " Required
 call neobundle#end()
 
