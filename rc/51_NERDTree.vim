@@ -1,7 +1,25 @@
 " vim: set ff=unix ft=vim fenc=utf-8:
 
 " Toggle NERDTree using ,d
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+map <leader>d :call g:MyNERDTreeToggle()<CR>
+
+" Workaround for #162 - Buffer Delete breaks NERDTreeToggle
+" https://github.com/scrooloose/nerdtree/issues/162
+" We try NERDTreeToggle, if that doesn't work then try NERDTree
+function! g:MyNERDTreeToggle()
+  if(exists("t:NERDTreeBufName"))
+    if(bufnr(t:NERDTreeBufName) != -1)
+      :NERDTreeToggle
+    else
+      :NERDTree
+    end
+  else
+    :NERDTree
+  end
+  " try | :NERDTreeToggle | catch | :NERDTree | endtry
+endfunction
+
+
 " Find the current buffer in NERDTree using ,r
 map <leader>r :NERDTreeFind<cr>
 
