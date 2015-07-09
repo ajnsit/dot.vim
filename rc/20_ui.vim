@@ -26,6 +26,9 @@ au BufEnter    * match     ExtraWhitespace /\s\+$/        " Highlight on buffer 
 au InsertEnter * match     ExtraWhitespace /\s\+\%#\@<!$/ " Stop highlighting on entering insert mode
 au InsertLeave * match     ExtraWhiteSpace /\s\+$/        " Highlight again on exiting insert mode
 
+" Use pleasant but very visible search hilighting
+hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
+hi! link Visual Search
 
 " Set a slightly larger window size on startup
 " Commented this as it's annoying with vim in the console

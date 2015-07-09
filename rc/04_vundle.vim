@@ -34,9 +34,17 @@ NeoBundle 'scrooloose/nerdtree'    " File explorer. E.g. <leader>d and <leader>r
 NeoBundle 'kien/ctrlp.vim'         " Fuzzy file finder. E.g. <Ctrl>p
 NeoBundle 'mru.vim'                " Most recently used file list. E.g. :MRU aliased to :rf
 
+" Buffer management
+NeoBundle 'moll/vim-bbye'          " Close buffer without messing layout with :Bdelete
+
+"GIT
+NeoBundle 'tpope/vim-fugitive'
+" Wrapper for fugitive. Emulates TIG (http://jonas.nitro.dk/tig/). Example - :Extradite
+NeoBundle 'int3/vim-extradite'
 
 " Programming ------------------------------------------------------------------
 
+NeoBundle 'jgdavey/tslime.vim'       " Slime Mode
 NeoBundle 'scrooloose/syntastic'     " Quick type checking
 NeoBundle 'majutsushi/tagbar'        " Tags explorer. E.g. <F8>
 " Neocomplete doesn't work with neovim yet (due to if_lua). Use neocomplcache instead
@@ -58,10 +66,12 @@ NeoBundle 'myusuf3/numbers.vim'    " Switch between relative and absolute line n
 NeoBundle 'bling/vim-airline'      " Status bar
 NeoBundle 'airblade/vim-gitgutter' " Show git diff markers in the gutter
 NeoBundle 'mbadran/headlights'     " Bundle management menu
+NeoBundle 'nathanaelkane/vim-indent-guides' " Show guides for indentation
 
 
 " Motion and Text --------------------------------------------------------------
 
+NeoBundle 'ervandew/supertab'       " ??
 NeoBundle 'godlygeek/tabular'       " Text alignment
 NeoBundle 'matchit.zip'             " improved '%' matches
 NeoBundle 'argtextobj.vim'          " Text objects for arguments ('a')
@@ -71,16 +81,28 @@ NeoBundle 'Lokaltog/vim-easymotion' " <leader><leader>w or <leader><leader>b etc
 NeoBundle 'tpope/vim-surround'      " Manipulate 'surrounding' characters, ds<char>, cs<char><char>, ys<obj><char>
 NeoBundle 'bkad/CamelCaseMotion'    " Move within camel-cased and underscored words, <leader>w <leader>b <leader>e
 
+" Important - indentation based text object
+" Example - <count>ai (A)n (I)ndentation level and line above. 
+NeoBundle 'michaeljsmith/vim-indent-object'
+
 " Other languages
-NeoBundle 'digitaltoad/vim-jade'    " Jade language support
+" NeoBundle 'digitaltoad/vim-jade'    " Jade language support
 
 " Haskell
-" NeoBundle 'Twinside/vim-haskellConceal' " Unicode haskell
-" NeoBundle 'eagletmt/ghcmod-vim'      " GHCMod integration
+NeoBundle 'Twinside/vim-hoogle'      " Hoogle
+NeoBundle 'eagletmt/ghcmod-vim'      " GHCMod integration
+NeoBundle 'eagletmt/neco-ghc'        " NECO GHC ???
+NeoBundle 'raichoo/haskell-vim' " Better haskell highlighting, indentation, and cabal support
+NeoBundle 'enomsg/vim-haskellConcealPlus' " Unicode haskell
+
 " NeoBundle 'adinapoli/cumino'         " Vim -> Ghci communication through tmux
 " Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'      " BROKEN
 
 NeoBundle 'pbrisbin/vim-syntax-shakespeare'
+
+" UNDO Visualisation
+" Use the following keybinding - nnoremap <F5> :GundoToggle<CR>
+NeoBundle 'sjl/gundo.vim'
 
 " Required
 call neobundle#end()
