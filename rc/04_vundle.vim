@@ -29,22 +29,20 @@ NeoBundle 'Shougo/vimproc', {
 " My Bundles
 
 " File management --------------------------------------------------------------
-
 NeoBundle 'scrooloose/nerdtree'    " File explorer. E.g. <leader>d and <leader>r
 NeoBundle 'kien/ctrlp.vim'         " Fuzzy file finder. E.g. <Ctrl>p
 NeoBundle 'mru.vim'                " Most recently used file list. E.g. :MRU aliased to :rf
 
-" Buffer management
+" Buffer management ------------------------------------------------------------
 NeoBundle 'moll/vim-bbye'          " Close buffer without messing layout with :Bdelete
 
-"GIT
+" GIT --------------------------------------------------------------------------
 NeoBundle 'tpope/vim-fugitive'
 " Wrapper for fugitive. Emulates TIG (http://jonas.nitro.dk/tig/). Example - :Extradite
 NeoBundle 'int3/vim-extradite'
 
 " Programming ------------------------------------------------------------------
-
-NeoBundle 'jgdavey/tslime.vim'       " Slime Mode
+" NeoBundle 'jgdavey/tslime.vim'       " Slime Mode
 NeoBundle 'scrooloose/syntastic'     " Quick type checking
 NeoBundle 'majutsushi/tagbar'        " Tags explorer. E.g. <F8>
 " Neocomplete doesn't work with neovim yet (due to if_lua). Use neocomplcache instead
@@ -82,11 +80,8 @@ NeoBundle 'tpope/vim-surround'      " Manipulate 'surrounding' characters, ds<ch
 NeoBundle 'bkad/CamelCaseMotion'    " Move within camel-cased and underscored words, <leader>w <leader>b <leader>e
 
 " Important - indentation based text object
-" Example - <count>ai (A)n (I)ndentation level and line above. 
+" Example - <count>ai (A)n (I)ndentation level and line above.
 NeoBundle 'michaeljsmith/vim-indent-object'
-
-" Other languages
-" NeoBundle 'digitaltoad/vim-jade'    " Jade language support
 
 " Haskell
 NeoBundle 'Twinside/vim-hoogle'      " Hoogle
@@ -94,9 +89,6 @@ NeoBundle 'eagletmt/ghcmod-vim'      " GHCMod integration
 NeoBundle 'eagletmt/neco-ghc'        " NECO GHC ???
 NeoBundle 'raichoo/haskell-vim' " Better haskell highlighting, indentation, and cabal support
 NeoBundle 'enomsg/vim-haskellConcealPlus' " Unicode haskell
-
-" NeoBundle 'adinapoli/cumino'         " Vim -> Ghci communication through tmux
-" Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'      " BROKEN
 
 NeoBundle 'pbrisbin/vim-syntax-shakespeare'
 
